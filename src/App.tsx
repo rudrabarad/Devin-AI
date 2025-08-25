@@ -40,57 +40,57 @@ function App() {
           <div className="p-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-6">AHA Hospital Statistics</h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-              <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-blue-900 mb-3">Historical Trends in Utilization and Personnel for Selected Years</h2>
-                <p className="text-blue-700 text-sm">
+              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                <h2 className="text-xl font-semibold text-slate-800 mb-3">Historical Trends in Utilization and Personnel for Selected Years</h2>
+                <p className="text-slate-600 text-sm">
                   Evaluate historical data and examine long-term trends in health care with data dating back more than sixty years
                 </p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-blue-900 mb-3">U.S. Hospitals: Utilization and Personnel</h2>
-                <p className="text-blue-700 text-sm">
+              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                <h2 className="text-xl font-semibold text-slate-800 mb-3">U.S. Hospitals: Utilization and Personnel</h2>
+                <p className="text-slate-600 text-sm">
                   Discover utilization, personnel and finance statistics for U.S. hospitals
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-              <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-blue-900 mb-3">Total United States</h2>
-                <p className="text-blue-700 text-sm">
+              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                <h2 className="text-xl font-semibold text-slate-800 mb-3">Total United States</h2>
+                <p className="text-slate-600 text-sm">
                   Discover utilization, personnel and finance statistics for U.S. hospitals
                 </p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-blue-900 mb-3">Best Size Categories</h2>
-                <p className="text-blue-700 text-sm">
+              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                <h2 className="text-xl font-semibold text-slate-800 mb-3">Best Size Categories</h2>
+                <p className="text-slate-600 text-sm">
                   Discover utilization, personnel and finance statistics for U.S. hospitals
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-blue-900 mb-3">U.S Census Division</h2>
-                <p className="text-blue-700 text-sm">
+              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                <h2 className="text-xl font-semibold text-slate-800 mb-3">U.S Census Division</h2>
+                <p className="text-slate-600 text-sm">
                   Track trends on a regional level by reviewing general overview, utilization, and community health indicator information
                 </p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-blue-900 mb-3">States</h2>
-                <p className="text-blue-700 text-sm">
+              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                <h2 className="text-xl font-semibold text-slate-800 mb-3">States</h2>
+                <p className="text-slate-600 text-sm">
                   Track trends on a national level by reviewing general overview, utilization, personnel, and community health indicators
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-              <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-blue-900 mb-3">Facilities and Services in the U.S. Census Divisions and States</h2>
-                <p className="text-blue-700 text-sm">
+              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                <h2 className="text-xl font-semibold text-slate-800 mb-3">Facilities and Services in the U.S. Census Divisions and States</h2>
+                <p className="text-slate-600 text-sm">
                   Examine facilities and services by both Census Division and State to better understand what service lines are emerging and how many facilities offer a particular service
                 </p>
               </div>
-              <div className="bg-blue-50 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-blue-900 mb-3">Community Hospitals by Metropolitan Area: Utilization, Personnel and Finances</h2>
-                <p className="text-blue-700 text-sm">
+              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                <h2 className="text-xl font-semibold text-slate-800 mb-3">Community Hospitals by Metropolitan Area: Utilization, Personnel and Finances</h2>
+                <p className="text-slate-600 text-sm">
                   Analyze general overview, utilization, personnel, and finance information for U.S. community hospitals, broken down by Metropolitan Statistical Area (MSA)
                 </p>
               </div>
@@ -278,12 +278,12 @@ function App() {
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <div className="w-64 bg-blue-900 text-white flex flex-col">
+      <div className="w-64 bg-slate-900 text-white flex flex-col">
         {/* Header */}
-        <div className="p-4 border-b border-blue-800">
+        <div className="p-4 border-b border-slate-700">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-              <BarChart3 className="w-5 h-5 text-blue-900" />
+              <BarChart3 className="w-5 h-5 text-slate-900" />
             </div>
             <div>
               <div className="text-sm font-semibold">AHA Data &amp;</div>
@@ -303,8 +303,8 @@ function App() {
                     onClick={() => setActiveTab(item.name)}
                     className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors ${
                       activeTab === item.name
-                        ? 'bg-blue-800 text-white'
-                        : 'text-blue-100 hover:bg-blue-800 hover:text-white'
+                        ? 'bg-slate-700 text-white'
+                        : 'text-slate-100 hover:bg-slate-700 hover:text-white'
                     }`}
                   >
                     <IconComponent className="w-5 h-5" />
