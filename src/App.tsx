@@ -15,6 +15,7 @@ function App() {
   ]
 
   const renderContent = () => {
+    console.log('Rendering content for activeTab:', activeTab);
     switch (activeTab) {
       case 'Guide':
         return (
@@ -300,7 +301,11 @@ function App() {
               return (
                 <li key={item.name}>
                   <button
-                    onClick={() => setActiveTab(item.name)}
+                    onClick={() => {
+                      console.log('Navigation clicked:', item.name);
+                      setActiveTab(item.name);
+                      console.log('Active tab set to:', item.name);
+                    }}
                     className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors ${
                       activeTab === item.name
                         ? 'bg-slate-700 text-white'
