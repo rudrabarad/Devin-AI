@@ -1,6 +1,20 @@
 import { useState } from 'react'
 import { BarChart3, FileText, Search, Activity, BookOpen, Globe } from 'lucide-react'
 import './App.css'
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarHeader,
+  SidebarInset,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+  SidebarRail,
+  SidebarTrigger,
+} from "@/components/ui/sidebar"
 
 function App() {
   const [activeTab, setActiveTab] = useState('Statistics')
@@ -12,6 +26,49 @@ function App() {
     { name: 'Vitality Index', icon: Activity },
     { name: 'Glossary', icon: FileText },
     { name: 'AHAData.com', icon: Globe }
+  ]
+
+  const statisticsCards = [
+    {
+      id: 1,
+      title: "Historical Trends in Utilization and Personnel for Selected Years",
+      description: "Evaluate historical data and examine long-term trends in health care with data dating back more than sixty years"
+    },
+    {
+      id: 2,
+      title: "U.S. Hospitals: Utilization and Personnel",
+      description: "Discover utilization, personnel and finance statistics for U.S. hospitals"
+    },
+    {
+      id: 3,
+      title: "Total United States",
+      description: "Discover utilization, personnel and finance statistics for U.S. hospitals"
+    },
+    {
+      id: 4,
+      title: "Best Size Categories",
+      description: "Discover utilization, personnel and finance statistics for U.S. hospitals"
+    },
+    {
+      id: 5,
+      title: "U.S Census Division",
+      description: "Track trends on a regional level by reviewing general overview, utilization, and community health indicator information"
+    },
+    {
+      id: 6,
+      title: "States",
+      description: "Track trends on a national level by reviewing general overview, utilization, personnel, and community health indicators"
+    },
+    {
+      id: 7,
+      title: "Facilities and Services in the U.S. Census Divisions and States",
+      description: "Examine facilities and services by both Census Division and State to better understand what service lines are emerging and how many facilities offer a particular service"
+    },
+    {
+      id: 8,
+      title: "Community Hospitals by Metropolitan Area: Utilization, Personnel and Finances",
+      description: "Analyze general overview, utilization, personnel, and finance information for U.S. community hospitals, broken down by Metropolitan Statistical Area (MSA)"
+    }
   ]
 
   const renderContent = () => {
@@ -40,61 +97,20 @@ function App() {
         return (
           <div className="p-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-6">AHA Hospital Statistics</h1>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-slate-800 mb-3">Historical Trends in Utilization and Personnel for Selected Years</h2>
-                <p className="text-slate-600 text-sm">
-                  Evaluate historical data and examine long-term trends in health care with data dating back more than sixty years
-                </p>
-              </div>
-              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-slate-800 mb-3">U.S. Hospitals: Utilization and Personnel</h2>
-                <p className="text-slate-600 text-sm">
-                  Discover utilization, personnel and finance statistics for U.S. hospitals
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-slate-800 mb-3">Total United States</h2>
-                <p className="text-slate-600 text-sm">
-                  Discover utilization, personnel and finance statistics for U.S. hospitals
-                </p>
-              </div>
-              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-slate-800 mb-3">Best Size Categories</h2>
-                <p className="text-slate-600 text-sm">
-                  Discover utilization, personnel and finance statistics for U.S. hospitals
-                </p>
-              </div>
-            </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-slate-800 mb-3">U.S Census Division</h2>
-                <p className="text-slate-600 text-sm">
-                  Track trends on a regional level by reviewing general overview, utilization, and community health indicator information
-                </p>
-              </div>
-              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-slate-800 mb-3">States</h2>
-                <p className="text-slate-600 text-sm">
-                  Track trends on a national level by reviewing general overview, utilization, personnel, and community health indicators
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-slate-800 mb-3">Facilities and Services in the U.S. Census Divisions and States</h2>
-                <p className="text-slate-600 text-sm">
-                  Examine facilities and services by both Census Division and State to better understand what service lines are emerging and how many facilities offer a particular service
-                </p>
-              </div>
-              <div className="bg-gray-100 rounded-lg p-6 shadow-md">
-                <h2 className="text-xl font-semibold text-slate-800 mb-3">Community Hospitals by Metropolitan Area: Utilization, Personnel and Finances</h2>
-                <p className="text-slate-600 text-sm">
-                  Analyze general overview, utilization, personnel, and finance information for U.S. community hospitals, broken down by Metropolitan Statistical Area (MSA)
-                </p>
-              </div>
+              {statisticsCards.map((card) => (
+                <div key={card.id} className="relative bg-[#E2E8F0] rounded-lg p-6 shadow-md overflow-hidden">
+                  <div className="absolute top-4 right-4 text-6xl font-bold text-white opacity-20">
+                    {card.id.toString().padStart(2, '0')}
+                  </div>
+                  <div className="relative z-10">
+                    <h2 className="text-xl font-medium text-slate-800 mb-3">{card.title}</h2>
+                    <p className="text-slate-600 text-sm">
+                      {card.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )
@@ -277,56 +293,62 @@ function App() {
   }
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
-      <div className="w-64 bg-slate-900 text-white flex flex-col">
-        {/* Header */}
-        <div className="p-4 border-b border-slate-700">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-              <BarChart3 className="w-5 h-5 text-slate-900" />
+    <SidebarProvider>
+      <div className="flex h-screen w-full">
+        <Sidebar 
+          collapsible="icon" 
+          className="border-r-0 bg-[#002855]"
+        >
+          <SidebarHeader className="border-b border-white/20 bg-[#002855]">
+            <div className="flex items-center space-x-2 px-2 py-2">
+              <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
+                <BarChart3 className="w-5 h-5 text-[#002855]" />
+              </div>
+              <div className="group-data-[collapsible=icon]:hidden">
+                <div className="text-sm font-semibold text-white">AHA Data &amp;</div>
+                <div className="text-sm text-white">Insights</div>
+              </div>
             </div>
-            <div>
-              <div className="text-sm font-semibold">AHA Data &amp;</div>
-              <div className="text-sm">Insights</div>
-            </div>
+          </SidebarHeader>
+          <SidebarContent className="bg-[#002855]">
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {navigationItems.map((item) => {
+                    const IconComponent = item.icon
+                    return (
+                      <SidebarMenuItem key={item.name}>
+                        <SidebarMenuButton
+                          onClick={() => {
+                            console.log('Navigation clicked:', item.name);
+                            setActiveTab(item.name);
+                            console.log('Active tab set to:', item.name);
+                          }}
+                          isActive={activeTab === item.name}
+                          className="text-white hover:bg-white/10 data-[active=true]:bg-white/20 data-[state=open]:bg-white/20"
+                        >
+                          <IconComponent className="w-5 h-5 text-white" />
+                          <span className="text-white">{item.name}</span>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    )
+                  })}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </SidebarContent>
+          <SidebarRail />
+        </Sidebar>
+        <SidebarInset className="flex-1">
+          <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
+            <SidebarTrigger className="-ml-1" />
+          </header>
+          <div className="flex-1 overflow-auto">
+            {renderContent()}
           </div>
-        </div>
-
-        {/* Navigation */}
-        <nav className="flex-1 p-4">
-          <ul className="space-y-2">
-            {navigationItems.map((item) => {
-              const IconComponent = item.icon
-              return (
-                <li key={item.name}>
-                  <button
-                    onClick={() => {
-                      console.log('Navigation clicked:', item.name);
-                      setActiveTab(item.name);
-                      console.log('Active tab set to:', item.name);
-                    }}
-                    className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors ${
-                      activeTab === item.name
-                        ? 'bg-slate-700 text-white'
-                        : 'text-slate-100 hover:bg-slate-700 hover:text-white'
-                    }`}
-                  >
-                    <IconComponent className="w-5 h-5" />
-                    <span className="text-sm">{item.name}</span>
-                  </button>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
+        </SidebarInset>
       </div>
-
-      {/* Main Content */}
-      <div className="flex-1 overflow-auto">
-        {renderContent()}
-      </div>
-    </div>
+    </SidebarProvider>
   )
 }
 
