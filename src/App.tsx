@@ -297,15 +297,9 @@ function App() {
       <div className="flex h-screen w-full">
         <Sidebar 
           collapsible="icon" 
-          className="border-r-0"
-          style={{ 
-            '--sidebar-background': '#002855',
-            '--sidebar-foreground': 'white',
-            '--sidebar-accent': 'rgba(255, 255, 255, 0.1)',
-            '--sidebar-accent-foreground': 'white'
-          } as React.CSSProperties}
+          className="border-r-0 bg-[#002855]"
         >
-          <SidebarHeader className="border-b border-white/20">
+          <SidebarHeader className="border-b border-white/20 bg-[#002855]">
             <div className="flex items-center space-x-2 px-2 py-2">
               <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
                 <BarChart3 className="w-5 h-5 text-[#002855]" />
@@ -316,7 +310,7 @@ function App() {
               </div>
             </div>
           </SidebarHeader>
-          <SidebarContent>
+          <SidebarContent className="bg-[#002855]">
             <SidebarGroup>
               <SidebarGroupContent>
                 <SidebarMenu>
@@ -331,10 +325,10 @@ function App() {
                             console.log('Active tab set to:', item.name);
                           }}
                           isActive={activeTab === item.name}
-                          className="text-white hover:bg-white/10 data-[active=true]:bg-white/20"
+                          className="text-white hover:bg-white/10 data-[active=true]:bg-white/20 data-[state=open]:bg-white/20"
                         >
-                          <IconComponent className="w-5 h-5" />
-                          <span>{item.name}</span>
+                          <IconComponent className="w-5 h-5 text-white" />
+                          <span className="text-white">{item.name}</span>
                         </SidebarMenuButton>
                       </SidebarMenuItem>
                     )
