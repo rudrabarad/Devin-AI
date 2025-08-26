@@ -104,7 +104,7 @@ function App() {
                     {card.id.toString().padStart(2, '0')}
                   </div>
                   <div className="relative z-10">
-                    <h2 className="text-xl font-semibold text-slate-800 mb-3">{card.title}</h2>
+                    <h2 className="text-xl font-normal text-slate-800 mb-3">{card.title}</h2>
                     <p className="text-slate-600 text-sm">
                       {card.description}
                     </p>
